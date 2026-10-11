@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.35.11](https://github.com/cedricziel/ha-matter-binding-helper/compare/v0.35.10...v0.35.11) (2026-10-11)
+
+
+### Miscellaneous
+
+* **deps-dev:** update ruff requirement ([#449](https://github.com/cedricziel/ha-matter-binding-helper/issues/449)) ([e29e333](https://github.com/cedricziel/ha-matter-binding-helper/commit/e29e333f8e058fb94f8a90be49d2d43b023c24ec))
+
 ## [0.35.10](https://github.com/cedricziel/ha-matter-binding-helper/compare/v0.35.9...v0.35.10) (2026-10-09)
 
 
