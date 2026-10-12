@@ -12,6 +12,7 @@ from homeassistant.helpers import area_registry as ar
 from homeassistant.helpers import device_registry as dr
 
 from . import matter_client
+from .matter.compat import iter_registry_devices
 from .automation_generator import (
     create_automation_from_template,
     preview_automation,
@@ -210,7 +211,7 @@ async def ws_debug_devices(
     area_registry = ar.async_get(hass)
 
     matter_devices = []
-    for device in device_registry.devices.values():
+    for device in iter_registry_devices(device_registry):
         # Check if any identifier starts with "matter"
         matter_identifiers = [
             list(ident)
@@ -379,7 +380,7 @@ async def ws_debug_match(
     matches = []
     checked = []
 
-    for device in device_registry.devices.values():
+    for device in iter_registry_devices(device_registry):
         for identifier in device.identifiers:
             if len(identifier) >= 2 and identifier[0] == "matter":
                 id_value = str(identifier[1])

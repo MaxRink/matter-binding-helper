@@ -13,6 +13,8 @@ from homeassistant.helpers import area_registry as ar
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
 
+from .compat import iter_registry_devices
+
 _LOGGER = logging.getLogger(__name__)
 
 
@@ -88,7 +90,7 @@ def get_ha_device_info(hass: HomeAssistant, node_id: int) -> dict[str, Any]:
         area_registry = ar.async_get(hass)
 
         # Find devices with Matter identifiers containing our node_id
-        for device in device_registry.devices.values():
+        for device in iter_registry_devices(device_registry):
             for identifier in device.identifiers:
                 # Check if this is a Matter device
                 if len(identifier) >= 2 and identifier[0] == "matter":
