@@ -31,3 +31,29 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: docker
+    directory: /devices/rust-device
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: docker-compose
+    directories:
+    - /
+    - /devices
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
