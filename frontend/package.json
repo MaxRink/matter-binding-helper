@@ -20,7 +20,7 @@
     "@typescript-eslint/parser": "^8.70.1",
     "@vitest/ui": "^4.1.10",
     "eslint": "^10.11.0",
-    "happy-dom": "^20.14.0",
+    "happy-dom": "^21.0.4",
     "prettier": "^3.9.6",
     "rollup": "^4.64.0",
     "tslib": "^2.6.2",
